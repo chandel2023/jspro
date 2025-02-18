@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js progs</title>
+    <script type="text/javascript">
+
+        //this whole thing will be written without using src tag 
+        //and merging another js page to this html page
+
+        // 1---print namaste by diff methods
+        /*alert('namaste');
+        console.log("namaskar");
+        document.write('pranam');*/
+
+        // 2---static number
+        /*let a= 5; 
+        let b= 10;
+        var c = a+b;
+        console.log("sum of "+a+" and "+b+" is "+c);*/
+
+        // 3---dynamic number
+        /*let a= prompt("enter first number",""); 
+        let b= prompt("enter second number",""); 
+        var c = parseInt(a) + parseInt(b); //to  make a,b as int
+        console.log("sum of "+a+" and "+b+" is "+c);*/
+
+        // 4---square root
+        /*var a= prompt("enter a number",""); 
+         var b= Math.sqrt(a);
+         console.log(b);*/
+
+        // 5---area of triangle
+        /*var base= prompt("enter the base value");
+        var height= prompt("enter the height value");
+        var area= (base*height)/2;
+        console.log('base:'+base+' and height:'+height+' =>area:'+area);*/
+
+        // 6---area of regular triangle
+        /*var a= 10;
+        var b= 5;
+        var c= 10;
+        var s= (a+b+c)/2;
+        var temp= s*(s-a)*(s-b)*(s-c);
+        var area= Math.sqrt(temp);
+        console.log(temp);*/
+
+        // 7---swap two numbers using & w/o using temporary variable 
+        /*var a= prompt("enter a number"); 
+        var b= prompt("enter b number"); 
+        console.log(`the value of a is: ${a}, the value of b is: ${b}`);
+        // above `` types is a method of attaching variable to string 
+        var temp;
+        temp=a;
+        a=b;
+        b=temp;
+        console.log(`after swapping: 
+        \nthe value of a is: ${a}, the value of b is: ${b}`);*/
+
+        // 8---w/o using temporary variable
+        /*var a= parseInt(prompt("enter a number")); 
+        var b= parseInt(prompt("enter b number"));
+        console.log(`the value of a is: ${a}, the value of b is: ${b}`); 
+        // let a=5 and b=6
+        a=a+b; //a=11 which is current a 
+        b=a-b; //b=5
+        a=a-b; //a=6 which is resultant value of a 
+        // now a=6 and b=5
+        console.log(`after swapping 
+        \nthe value of a is: ${a}, the value of b is: ${b}`);*/
+        
+        // 9---convert Kms to Miles using js function
+        /*function convert(){
+            var kms = document.getElementById('data').value;
+            const factor= 0.621371;
+            var miles= kms * factor;
+            document.getElementById('res').innerText= `${miles} Miles`;}*/
+
+        // 10---convert celsius to fahrenheit using js function
+        /*function convert(){
+        var Celsius = document.getElementById('data').value;
+        var Fahrenheit= (Celsius*1.8)+32;
+        document.getElementById('res').innerText= 
+        `${Celsius} Celsius = ${Fahrenheit} Fahrenheit`;}*/
+
+        // 11---check whether number is positive, negative or zero
+        /*function check(){
+        var value = document.getElementById('data').value;
+        var res= Math.sign(value);
+        document.getElementById('res').innerText= res;}*/
+
+        // 12---using user defined function to check whether number is positive, 
+        // negative or zero
+        /*function check(){
+            var value = document.getElementById('data').value;
+            if (value>0){
+                res= `${value} is positive number`;
+            }
+            else if(value<0){
+                res= `${value} is negative number`;
+            }
+            else if(value==0){
+                res= `${value} is zero`;
+            }
+            else{
+                res= `${value} is not a number`;
+            }
+            document.getElementById('res').innerText= res;}*/
+
+        // 13---generate a random number
+            /*var x= Math.random(); 
+            console.log("random no "+x);
+            //math.random() number generates random no. between 0 & 10
+            x= x*(10-1)+1; 
+            console.log("random no in range "+x);
+            //random no in range with floor calc
+            console.log("floor calculation "+ Math.floor(x));*/
+
+        // 14---checking a number is even or odd
+            //using ternary operator
+            /*var x=3;
+            if(x%2==0){
+                console.log(`${x} is an even no`);
+            }
+            else{
+                console.log(`${x} is an odd no`);
+            }*/
+
+        // 15---using ternary operator
+           /*var x=2;
+           var res= x%2==0 ? "even" : "odd";
+           console.log(`${x} is an ${res} number`);*/
+
+        // 16---to check a prime number
+           /*var number= prompt("please enter a number");
+           if (number==1){
+            console.log(`${number} is neither a prime nor a composite number`);
+           }else if(number==2){
+            console.log(`${number} is a prime number which is exceptionally even also`);
+           }
+           else if(number<1){
+            console.log(`${number} which is negative can not be a prime number`);
+           }else{
+            for(var i=2; i<number; i++){
+                if(number%i==0){
+                    var res= `${number} is not a prime number`;
+                    break;
+                }else{
+                    var res= `${number} is a prime number`;
+                }
+            }
+            console.log(res);
+           }*/
+
+        // 17---largest among three numbers
+           //using Math.max() method
+           /*var a= prompt("please enter 1st number");
+           var b= prompt("please enter 2nd number");
+           var c= prompt("please enter 3rd number");
+           var x= Math.max(a,b,c);
+           console.log(`among ${a}, ${b}, ${c}: Largest= ${x}`);*/
+
+        // 18---largest among three numbers using user defined function
+           //p,q,r can also be taken which is different from a,b,c
+           //because a,b,c value will be stored in the place of
+           //p,q,r so there is no problem 
+           /*function check(p,q,r){
+            if(p>q && p>r){
+                return p;
+            }else if(q>p && q>r){
+                return r;
+            }else{
+                return r;
+            }
+           }
+           var a= prompt("please enter 1st number");
+           var b= prompt("please enter 2nd number");
+           var c= prompt("please enter 3rd number");
+           var x= check(a,b,c);
+           console.log(`among ${a}, ${b}, ${c}: Largest= ${x}`);*/
+
+        // 19---factorial of number
+           /*var number= prompt("please enter a number");
+           var fact=1;
+           if(number==0){
+            console.log(`the factorial of ${number} is 1`);
+           }else if(number<0){
+            console.log(`the factorial of negative number is not possible`);
+           }else{
+            for(var i=1; i<=number; i++){
+                fact=fact*i;
+            }
+            console.log(`the factorial of ${number} is ${fact}`);
+           }*/
+
+        // 20---factorial of number using recursion
+           /*var number= prompt('please enter a number');
+           var fact=1;
+           function factr(n){
+            if (n>number){
+                return;
+            }
+            var tmp= fact;
+            fact= fact*n;
+            n++;
+            factr(n)
+           }
+           factr(1);
+           console.log(`the fact of ${number} is ${fact}`);*/
+
+        // 21--- print the table of any number given by user
+           /*function table(number){
+
+            for(var i=1; i<=10; i++){
+                var res= i*number;
+                console.log(`${number} * ${i} = ${res}`);
+            }
+            //generally we can move from top to bottom also
+            //to easily understand with logic also
+           }
+           table(5);*/
+
+        // 22--- armstrong number
+        // in a 3 digit number sum of cubes of each digit is
+        // equal to the number itself like 153
+        /*var number= prompt('please enter a number');
+        var temp= number;
+        var noOfDigits= number.toString().length;
+        var sum= 0;
+        while(temp>0){
+            var digit= temp%10;
+            sum += digit**noOfDigits;
+            temp= parseInt(temp/10); 
+        }
+        if (sum==number){
+            console.log(`${number} is an armstrong number`);
+        }else{
+            console.log(`${number} is not an armstrong number`);
+        }*/
+
+        // 23--- check if numbers have the same last digit
+        /*var a= prompt("please enter 1st number");
+        var b= prompt("please enter 2nd number");
+        var c= prompt("please enter 3rd number");
+        var resa= a%10;
+        var resb= b%10;
+        var resc= c%10;
+        if (resa==resb && resa==resc){
+            console.log(`${a}, ${b}, ${c} are having the same last 
+            digit`);
+        }else{
+            console.log(`${a}, ${b}, ${c} are not having the same last 
+            digit`);
+        }*/
+
+        // 24---check palindrome number using array methods
+        /*var string= prompt("please enter a string");
+        var stringArray= string.split('');
+        var stringArrayRev= stringArray.reverse('');
+        var revString= stringArrayRev.join('');
+        if(string==revString){
+            console.log(`${string} is a palindrome number`);
+        }else{
+            console.log(`${string} is not a palindrome number`);
+        }*/
+
+        // 25---check palindrome number using for loop
+        /*var string= prompt("please enter a string");
+        var len= string.length;
+        var msg='it is a palindrome';
+        for(var i= 0; i<len/2; i++){
+        if(string[i]!=string[len-1-i]){
+            msg= 'it is not a palindrome';
+        }
+            }
+            console.log(`${string}: ${msg}`);*/
+
+        // 26---check number of occurences of a character in a string using for loop
+        /*var string = prompt("please enter a string");
+        var letter = prompt("please enter a letter");
+        let strLen = string.length;
+        var counter = 0;
+        for(var i=0; i<strLen; i++){
+            if(string[i]== letter){
+                counter++
+            }
+        }
+        console.log(`${string} => ${letter} => ${counter}`);*/
+
+        // 27---check whether a string starts and ends with certain character
+        /*var string= prompt("please enter a string");
+        console.log(string);
+        var first= prompt("please enter first letter");
+        var last= prompt("please enter last letter");
+        var testStart= string.startsWith(first);
+        var testEnd= string.endsWith(last);
+        console.log(`starts with ${first}: ${testStart}`);
+        console.log(`ends with ${last}: ${testEnd}`);*/
+
+        // 28---checking whether a string contains a substring
+        // string.includes() or string.indexOf()
+        /*var string= prompt("please enter a string");
+        var subString= prompt("please enter a substring");
+        var test1= string.includes(subString);
+        console.log(test1);
+        var test2= string.indexOf(subString);
+        console.log(test2);*/
+
+        // 29---convert the first letter of a string in to uppercase
+        // charAt(), to UpperCase(), slice()
+        /*var string= prompt("please enter a string");
+        console.log(string);
+        var first= string.charAt(0);
+        var rem= string.slice(1);
+        var caps= first.toUpperCase()+rem;
+        console.log(`final is ${caps}`);*/
+
+        // 30---count the number of vowels in a string using regex
+        // regex means regular expression used to match, test and find characters 
+        // from a string
+        /*var string= prompt("please enter a string");
+        const reg= /[aeiou]/gi;
+        var chars= string.match(reg);
+        console.log(chars.join(','));
+        console.log(chars.length);*/
+
+        // 31---find armstrong numbers between an interval
+        /*var a= prompt("please enter lower number");
+        var b= prompt("please enter upper number");
+        for(var i=a; i<=b; i++ ){
+            var temp=i;
+            var noOfDigits= i.toString().length;
+            var sum= 0;
+            while(temp>0){
+            var digit= temp%10;
+            temp= parseInt(temp/10); 
+            sum += digit**noOfDigits;
+        }
+        if (sum==i){
+            console.log(i);}}*/
+
+        // 32---find sum of natural numbers using recursion 
+        /*function sum(num){
+            if(num>0){
+                return num+sum(num-1);
+            }else{
+                return num;
+            }
+         }
+         var res= sum(10);
+         console.log(res);*/
+
+         // 33---find the factors of a number
+         /*var number= prompt("please enter the number");
+         for(var i=1; i<=number;i++){
+            if(number%i==0){
+                console.log(i);
+            }
+         }*/
+
+         // 34--- simple calculator using switch case
+         /*var num1= prompt("enter 1st number");
+         var num2= prompt("enter 2nd number");
+         var opr= prompt("enter operator among +,-,*,/");
+         switch(opr){
+            case "+":
+                var res= parseFloat(num1)+ parseFloat(num2);
+                console.log(`${num1} + ${num2} = ${res}`);
+                break;
+            case "-":
+                var res= parseFloat(num1)- parseFloat(num2);
+                console.log(`${num1} - ${num2} = ${res}`);
+                break;
+            case "*":
+                var res= parseFloat(num1)* parseFloat(num2);
+                console.log(`${num1} * ${num2} = ${res}`);
+                break;
+            case "/":
+                var res= parseFloat(num1)/ parseFloat(num2);
+                console.log(`${num1} / ${num2} = ${res}`);
+                break;
+            default:
+                console.log('invalid operator');}*/
+
+        // 35---print fibonacci sequence
+        // first 2 terms are 0,1 then next terms are addition of previous two
+        /*var a=0, b=1;
+        console.log(a);
+        console.log(b);
+        for(var i=0;i<=10;i++){
+            var temp= a+b;
+            console.log(temp);
+            a=b;
+            b=temp;}*/
+
+        // 36---replace characters of a string
+        // syntax=> replace(find,replace)
+        /*var string= prompt("please enter a string");
+        console.log(string);
+        var reg= new RegExp('red','gi');
+        //if sentence is maya has a Red car & a red bike
+        //here 'gi' removes the case sensitivity for replacing, and 'g' includes 
+        // the case sensitivity
+        var newString= string.replace(reg,'blue');
+        console.log(newString);*/
+
+        // 37---reverse a string using for loop
+        /*var string= prompt("please enter a string");
+        var strLen= string.length;
+        var revStr= '';
+        for(var i=strLen-1;i>=0;i--){
+            revStr+=string[i];
+        }
+        console.log(`the reverse of ${string} is ${revStr}`);*/
+
+        // 38---sort words in alphabetical order
+        // split('') and sort()
+        /*var string= prompt("please enter a string");
+        var stringArray= string.split('');
+        stringArray.sort();
+        console.log(string);
+        console.log(stringArray);
+        console.log(stringArray.join(''));*/
+
+    </script>
+</head>
+<body>
+
+    <!-- 9---convert Kms to Miles using js function
+    <h1>Convert Kms to Miles</h1>
+    <input type="number" name="" step="any" id="data" /> Kms
+    <button onclick="convert()">Convert</button> 
+    <h2 id="res"></h1> -->
+
+    <!-- 10---convert Celsius to Fahrenheit using js function
+    <h1>Convert Celsius to Fahrenheit</h1>
+    <input type="" name="" id="data" /> Celsius
+    <br/><br/>
+    <button onclick="convert()">Convert</button>
+    <h2 id="res"></h2> -->
+
+    <!-- 11---<input type="" name="" id="data" />
+    <br/><br/>
+    <button onclick="check()">check</button>
+    <h2 id="res"></h2> -->
+
+    <!-- 12---<input type="" name="" id="data" />
+    <br/><br/>
+    <button onclick="check()">check</button>
+    <h2 id="res"></h2>-->
+
+</body>
+</html>
